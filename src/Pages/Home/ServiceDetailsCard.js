@@ -42,15 +42,20 @@ const ServiceDetailsCard = () => {
 
     return (
         <div className="">
-            <figure><img src={photoURL} alt="Shoes" /></figure>
+            <figure><img className='w-full' src={photoURL} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title"> {title}</h2>
                 <p>
                     {message}
                 </p>
-                <Link to={`/donate/${_id}`}>
-                    <button className='btn btn-info text-white'>Donate now</button>
-                </Link>
+                <div className='flex'>
+                    <Link to={`/donate/${_id}`}>
+                        <button className='btn btn-info text-white mr-5'>Donate now</button>
+                    </Link>
+                    <Link to={`/updateService/${_id}`}>
+                        <button className='btn btn-info btn-outline hover:text-white'>Update</button>
+                    </Link>
+                </div>
             </div>
             <div className='ml-8 mb-5'>
                 <h3>Write a review</h3>
