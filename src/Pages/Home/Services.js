@@ -11,7 +11,10 @@ const Services = () => {
                 console.log(data)
                 setServices(data)
             })
-    }, [])
+    }, []);
+
+    
+
     return (
         <div className='bg-slate-100'>
             <h1 className='text-center text-3xl font-bold my-10'>Our Initiatives</h1>
@@ -20,6 +23,7 @@ const Services = () => {
                     services.map(service => <ServicesCard
                         key={service._id}
                         service={service}
+                        
                     ></ServicesCard>)
                 }
             </div>

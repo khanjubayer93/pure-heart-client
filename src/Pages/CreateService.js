@@ -32,6 +32,7 @@ const CreateService = () => {
         newService[field] = value;
         setService(newService)
     }
+    
     return (
         <div className='text-center'>
             <h1 className='text-3xl font-bold mb-3'>Add A Service</h1>

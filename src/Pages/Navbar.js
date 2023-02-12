@@ -35,23 +35,27 @@ const Navbar = () => {
                             <li><Link>Item 3</Link></li>
                         </ul>
                     </div>
-                    <Link to='/' className=" text-xl uppercase">Pure Heart</Link>
+                    <Link to='/' className=" text-xl uppercase font-bold text-slate-700">Pure Heart</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link>Home</Link></li>
                         <li><Link>About Us</Link></li>
 
-                        <li><Link>Donate</Link></li>
+                        <li><Link to='/donateDetails'>My Donate</Link></li>
                         <li><Link>Events</Link></li>
                         <li><Link to='/createService'>Add Service</Link></li>
                         <li><Link>Contact Us</Link></li>
-
                         {
                             user ?
                                 <>
-                                    <li>{user?.displayName}</li>
-                                    <li className='rounded-full'><img className='w-12 h-12' src={user?.photoURL} alt="" /></li>
+                                    <li><span>{user?.displayName}</span></li>
+                                    <li>
+                                        <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                                            <img className='w-12 h-12 rounded-full' src={user?.photoURL} alt="" />
+                                        </div>
+                                        
+                                    </li>
                                     <li><Link onClick={handleLogOut}>Log Out</Link></li>
                                 </>
                                 :
